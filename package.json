@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "dev": "flareact dev",
-    "build": "flareact build",
+    "build": "flareact build && wrangler build && node ./bin/deploy.js",
     "deploy": "flareact publish"
   },
   "dependencies": {
