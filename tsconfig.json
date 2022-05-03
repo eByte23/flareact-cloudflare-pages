@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "types": ["@cloudflare/workers-types"],
+    "jsx": "preserve",
+    "module": "esnext",
+    "lib": ["es7", "dom"],
+    "moduleResolution": "node"
+  }
+}
