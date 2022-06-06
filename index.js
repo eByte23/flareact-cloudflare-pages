@@ -12,6 +12,9 @@ const DEBUG = false;
 addEventListener("fetch", (event) => {
   global.window = global.window || {};
   window = window || {};
+  window.requestAnimationFrame = () => {
+    console.log("Polyfil executed");
+  };
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame = function () {
       console.log("filler func");
