@@ -1,11 +1,5 @@
 import { handleEvent } from "flareact";
 
-window = window || {};
-if (!window.requestAnimationFrame) {
-  window.requestAnimationFrame = function () {
-    console.log("filler func");
-  };
-}
 /**
  * The DEBUG flag will do two things that help during development:
  * 1. we will skip caching on the edge, which makes it easier to
@@ -16,6 +10,13 @@ if (!window.requestAnimationFrame) {
 const DEBUG = false;
 
 addEventListener("fetch", (event) => {
+  global.window = global.window || {};
+  window = window || {};
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function () {
+      console.log("filler func");
+    };
+  }
   try {
     event.respondWith(
       handleEvent(
